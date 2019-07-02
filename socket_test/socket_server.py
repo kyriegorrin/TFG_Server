@@ -27,7 +27,17 @@ except socket.error as err:
 con, addr = sock.accept()
 print("Connexió rebuda, IP")
 print(addr)
-print("-------------------")
 
+#Bucle de recepció de dades
 #Rebem i printem dades de test
-print (con.recv(1000).decode())
+counter = 0
+
+while True:
+    #Obtenim tamany del frame a obtenir
+    byteLength = int(con.recv(4).decode())
+    counter += 1
+    print("----------------------------------")
+    print ("Frame " + counter + " byte length: " + byteLength)
+    data = con.recv(byteLength)
+    print ("Bytes received: " + str(sys.getsizeof(data)))
+    print("----------------------------------")
