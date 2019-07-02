@@ -16,7 +16,7 @@ except socket.error as err:
 #Fem bind i posem el socket en mode listen
 #No expecifiquem IP pel moment
 try:
-    sock.bind((''), port)
+    sock.bind(('', port))
     sock.listen()
 except socket.error as err:
     print("Error de Bind/Listen de socket:")
@@ -24,8 +24,10 @@ except socket.error as err:
     sys.exit()
 
 #Bloquejem fins rebre connexió
-con, addr = s.accept()
-print("Connexió rebuda, IP -> " + addr)
+con, addr = sock.accept()
+print("Connexió rebuda, IP")
+print(addr)
+print("-------------------")
 
-#Rebem dades de test
-con.recv()
+#Rebem i printem dades de test
+print (con.recv(1000).decode())
