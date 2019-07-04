@@ -34,10 +34,13 @@ counter = 0
 
 while True:
     #Obtenim tamany del frame a obtenir
-    byteLength = int(con.recv(4).decode())
-    counter += 1
+    sizeData = con.recv(4)
+    byteLength = int.from_bytes(sizeData, "big")
+
+    #Obtenim les dades    
     print("----------------------------------")
-    print ("Frame " + counter + " byte length: " + byteLength)
+    print ("Frame " + str(counter) + " byte length: " + str(byteLength))
     data = con.recv(byteLength)
     print ("Bytes received: " + str(sys.getsizeof(data)))
     print("----------------------------------")
+    counter += 1
