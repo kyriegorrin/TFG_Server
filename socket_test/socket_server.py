@@ -32,7 +32,7 @@ print(addr)
 #Rebem i printem dades de test
 counter = 0
 
-while True:
+while counter != 100:
     #Obtenim tamany del frame a obtenir
     sizeData = con.recv(4)
     byteLength = int.from_bytes(sizeData, "big")
@@ -40,7 +40,15 @@ while True:
     #Obtenim les dades    
     print("----------------------------------")
     print ("Frame " + str(counter) + " byte length: " + str(byteLength))
-    data = con.recv(byteLength)
-    print ("Bytes received: " + str(sys.getsizeof(data)))
-    print("----------------------------------")
+    
+    data = b''
+
+    while len(data) < byteLength:
+        chunk = con.recv(byteLength - len(data))
+        print("Chunk size = " + str(len(chunk)))
+        if chunk == b'':
+            raise RuntimeError("Connexió de socket caiguda")
+        data = data + chunk
+
+    print ("Bytes received: " + str(len(data)))
     counter += 1
