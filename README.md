@@ -7,3 +7,7 @@ En aquest repositori poden existir programes secundaris, ja sigui de test de fun
 
 ## Llista de dependencies
 Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip install <package name>)
+
+- Numpy: pip install numpy
+- Cython: pip install Cython
+- ModernGL: pip install moderngl
