@@ -5,9 +5,23 @@ El programa principal espera connexions entrants i fa display de les dades rebud
 
 En aquest repositori poden existir programes secundaris, ja sigui de test de funcionalitats o secundaris.
 
-## Llista de dependencies
-Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip install <package name>)
+## Llista de dependencies (python)
+Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip install <package name>).
 
 - Numpy: pip install numpy
 - Cython: pip install Cython
 - ModernGL: pip install moderngl
+- - Required sub-dependencies:
+- - objloader
+- - numpy
+- - pillow
+- - pyrr
+- - pymunk
+- - matplotlib
+- - imageio
+- PyQt5: pip install PyQt5
+
+## Dependencies de software
+Software que no són packages de Python.
+
+- Qt5
