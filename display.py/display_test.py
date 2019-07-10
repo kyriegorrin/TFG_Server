@@ -8,7 +8,8 @@ import random as rand
 def z_function(x, y):
     return np.sin(np.sqrt(x ** 2 + y ** 2) * rand.random())
 
-def update_plot(frame_number, plot):
+def update_plot(frame_number):
+    global plot, X, Y
     plot.remove()
     Z = z_function(X, Y)
     plot = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, 
@@ -32,6 +33,6 @@ ax.set_title('surface_test')
 plot = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, 
             cmap='winter', edgecolor='none')
 
-animate = animation.FuncAnimation(fig, update_plot, fargs=(plot), interval=50)
+animate = animation.FuncAnimation(fig, update_plot, interval=50)
 
-plt.show()
+plt.show(block=True)
