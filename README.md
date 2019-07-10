@@ -10,6 +10,10 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 
 - Numpy: pip install numpy
 - Cython: pip install Cython
+- PyQt5: pip install PyQt5
+- Matplotlib: pip install matplotlib
+
+//La resta pot ser que siguin necessaris en un futur:
 - ModernGL: pip install moderngl
 - - Required sub-dependencies:
 - - objloader
@@ -19,7 +23,6 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 - - pymunk
 - - matplotlib
 - - imageio
-- PyQt5: pip install PyQt5
 
 ## Dependencies de software
 Software que no són packages de Python.
