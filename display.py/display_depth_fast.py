@@ -103,7 +103,7 @@ ax.set_title('Depth Frame')
 
 plot = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, 
             cmap='winter', edgecolor='black')
-
+        
 #Funció d'animació que crida repetidament "update_plot"
 animate = animation.FuncAnimation(fig, update_plot, 
                                 interval=100)
