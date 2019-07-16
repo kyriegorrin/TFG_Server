@@ -10,10 +10,10 @@ view.camera = scene.TurntableCamera(up='z', fov=60)
 
 # Simple surface plot example
 # x, y values are not specified, so assumed to be 0:50
-z = np.random.normal(size=(250, 250), scale=200)
+z = np.random.normal(size=(160, 120), scale=200)
 z[100, 100] += 50000
 z = gaussian_filter(z, (10, 10))
-p1 = scene.visuals.SurfacePlot(z=z, color=(0.3, 0.3, 1, 1))
+p1 = scene.visuals.SurfacePlot(z=z, color=(0.3, 0.3, 1, 1), shading='flat')
 p1.transform = scene.transforms.MatrixTransform()
 p1.transform.scale([1/249., 1/249., 1/249.])
 p1.transform.translate([-0.5, -0.5, 0])
@@ -39,7 +39,7 @@ yax.transform = scene.STTransform(translate=(0, 0, -0.2))
 axis = scene.visuals.XYZAxis(parent=view.scene)
 
 def updatePlot(plot):
-    z = np.random.normal(size=(250, 250), scale=200)
+    z = np.random.normal(size=(160, 120), scale=200)
     z[100, 100] += 50000
     z = gaussian_filter(z, (10, 10))
     plot.set_data(z=z)
