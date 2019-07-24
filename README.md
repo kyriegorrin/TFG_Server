@@ -12,6 +12,7 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 - Cython: pip install Cython
 - PyQt5: pip install PyQt5
 - Matplotlib: pip install matplotlib
+- Vispy: pip install vispy
 
 //La resta pot ser que siguin necessaris en un futur:
 - ModernGL: pip install moderngl
