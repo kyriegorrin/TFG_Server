@@ -14,6 +14,7 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 - Matplotlib: pip install matplotlib
 - Vispy: pip install vispy
 - Python-lzo: pip install python-lzo
+    - This one needs also needs LZO libraries installed
 
 //La resta pot ser que siguin necessaris en un futur:
 - ModernGL: pip install moderngl
@@ -30,4 +31,4 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 Software que no són packages de Python.
 
 - Qt5
-- LZO
+- LZO -> sudo apt install liblzo2-dev
