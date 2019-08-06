@@ -31,4 +31,6 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 Software que no són packages de Python.
 
 - Qt5
-- LZO -> sudo apt install liblzo2-dev
+- LZO sources i dependencies 
+    -> sudo apt install liblzo2-dev
+    -> sudo apt install zlib1g-dev
