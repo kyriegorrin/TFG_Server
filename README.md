@@ -13,6 +13,7 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 - PyQt5: pip install PyQt5
 - Matplotlib: pip install matplotlib
 - Vispy: pip install vispy
+- Python-lzo: pip install python-lzo
 
 //La resta pot ser que siguin necessaris en un futur:
 - ModernGL: pip install moderngl
@@ -29,3 +30,4 @@ Si no s'indica el contrari, totes les dependències s'instalaran via pip (pip in
 Software que no són packages de Python.
 
 - Qt5
+- LZO
