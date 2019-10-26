@@ -14,9 +14,9 @@ counter = 1 #Frame counter
 #Funcio per fer update del plot
 def updatePlot(plot):
     global counter
-    z = receive_frame(counter)
+    receive_frame(counter)
     counter += 1
-    plot.set_data(z=z)
+    #plot.set_data(z=z)
 
 #Funcio per rebre un frame de profunditat de la raspi,
 #retorna un array de numpy amb tota la informació Z
@@ -42,14 +42,14 @@ def receive_frame(counter):
 
     #Descomprimim el bytearray, sabem que descomprimit ha de
     #ocupar el doble de nombre de posicions del array en bytes
-    global z_positions
-    data = lzo.decompress(data, False, z_positions*2)
+    #global z_positions
+    #data = lzo.decompress(data, False, z_positions*2)
 
     #Generem matriu de profunditat a partir del byetarray
-    global x_positions, y_positions
-    Z = np.frombuffer(data, dtype=np.uint16)
-    Z = Z.reshape(y_positions, x_positions)
-    return Z
+    ##global x_positions, y_positions
+    ##Z = np.frombuffer(data, dtype=np.uint16)
+    ##Z = Z.reshape(y_positions, x_positions)
+    ##return Z
 
 #---------SOCKET SETUP----------#
 #Creacio de socket
@@ -95,8 +95,6 @@ view.camera = scene.TurntableCamera(up='z', fov=60)
 # x, y values are not specified, so assumed to be 0:50
 z = np.random.normal(size=(x_positions, y_positions), scale=200)
 p1 = scene.visuals.SurfacePlot(z=z, color=(0.3, 0.3, 1, 1), shading='flat')
-#p1 = scene.visuals.SurfacePlot(z=z, color=(0.3, 0.3, 1, 1), shading=None)
-#p1 = scene.visuals.SurfacePlot(z=z, color=(0.3, 0.3, 1, 1), shading='smooth')
 p1.transform = scene.transforms.MatrixTransform()
 p1.transform.scale([1/160., 1/160., 1/1000.])
 p1.transform.translate([-0.25, -0.5, 0])
@@ -123,4 +121,4 @@ if __name__ == '__main__':
     if sys.flags.interactive == 0:
         while True:
             updatePlot(p1)
-            app.process_events()
+            #app.process_events()
